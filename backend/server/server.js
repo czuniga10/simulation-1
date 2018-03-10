@@ -1,9 +1,10 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const addMiddleware = require('./middleware/decorate.middleware');
+const delegateRouters = require('./routers/delegate.router');
 
 const app = express();
 
-app.use( bodyParser.json() );
-
 const port = 8080;
-app.listen(port, () => { console.log(`=============================\nServer listening on port ${port}\n=============================`); })
+app.listen(port, () => { 
+    console.log(`=============================\nServer listening on port ${port}\n=============================`); 
+});
